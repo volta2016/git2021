@@ -40,6 +40,12 @@ Lo importante que ahora tenemos esa fotografía o registro que es el commit.
 
 Podemos ve el status o resumen de nuetros commit.
 
+## Branch
+
+**git branch -- master main**
+
+cambia el nombre de la rama
+
 **git checkout -- .**
 
 Re-construye el proyecto a como estaba en el ultimo commit.
