@@ -77,3 +77,9 @@ git add .
 git commit -m "commit"
 
 - git commit -am con este comando lo aplicamos los 2 comando en 1 solo.
+- Este comando funciona solamente si ya le estamos dando seguimiento al archivo.
+- Si esta Untracked posiblemente no lo va añadir.
+
+# Log Repositorio
+
+**git log"**
