@@ -44,3 +44,9 @@ Podemos ve el status o resumen de nuetros commit.
 
 Re-construye el proyecto a como estaba en el ultimo commit.
 Re-construye Los directorios borrados.
+
+**git config --global init.defaultBranch main**
+
+Configura a nivel global por defecto que el nombre de la rama sea de main.
+Vamos a notar con esto que automaticamente vamos estar trabajando en la rama main al aplicar el
+comando **git branch**

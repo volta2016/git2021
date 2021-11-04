@@ -47,13 +47,15 @@ Configuramos nuestro email
 
 **git config —-global -e**
 
+para salir:
+
+**:wq!**
+
 para hacer modificaciones a este archivo aplicamos la letra:
 
-a
-
-para salir
-
 **w es se refiere a escribir**
+
+para salir:
 
 **q de quit**
 
