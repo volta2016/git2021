@@ -56,3 +56,24 @@ Re-construye Los directorios borrados.
 Configura a nivel global por defecto que el nombre de la rama sea de main.
 Vamos a notar con esto que automaticamente vamos estar trabajando en la rama main al aplicar el
 comando **git branch**
+
+# añadir file: puesta en escena y commits
+
+**git add .**
+
+Con este comando digo a todos los archivos preparalos para una fotografía.
+Podemos notar que esta añadiendo los archivos los añade
+al stage se agrega al lado del file la letra A.
+**Quiere decir de que esta añadido al stage**
+
+**git reset README.md**
+Con este comando le estamos diciendo que regresa a su estado anterior de Untracked que lo saque del
+stage. Podemos notar el contenido sigue igual dentro del archivo.
+
+**git commit -am "Readme actualizado"**
+
+Nos evitamos hacer los 2 pasos de:
+git add .  
+git commit -m "commit"
+
+- git commit -am con este comando lo aplicamos los 2 comando en 1 solo.
