@@ -39,3 +39,8 @@ Lo importante que ahora tenemos esa fotografía o registro que es el commit.
 **git log**
 
 Podemos ve el status o resumen de nuetros commit.
+
+**git checkout -- .**
+
+Re-construye el proyecto a como estaba en el ultimo commit.
+Re-construye Los directorios borrados.
