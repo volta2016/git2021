@@ -83,3 +83,46 @@ git commit -m "commit"
 # Log Repositorio
 
 **git log"**
+
+Podemos ver el historial de nuestros gif
+El hash es el identificador único de commit
+
+# Diferentes formas de agregar commit al escenario
+
+**git add index.html main.html"**
+
+Agrega 2 archivos para la parte principal de mi web o 2 archivos que quiera dejar en mi stage.
+Si luego doy git status puedo ver que estos 2 archivos están en el stage con color verde.
+
+**git add \*.html"**
+
+Este comando agregando el \* agrega todos los archivos con extension .html a mi proyecto.
+
+**git add js/\*.js"**
+
+Agrega todos los archivos con extension .js pero que están dentro de un directorio.
+
+(use "git reset HEAD <file>..." to unstage)
+
+    new file:   js/bootstrap.min.js
+    new file:   js/jquery.min.js
+    new file:   js/main.js
+    new file:   js/popper.js
+
+podemos ver que añade todos los archivos del directorio que especificamos dentro de nuestro proyecto.
+
+**Git no le da seguimiento a las carpetas almenos que le agregamos un archivo dentro**
+
+# Diferentes formas de agregar commit al escenario
+
+.gitkeep - Es un archivo que pesa 0 bytes nos serive para decirle a git que agregue una carpeta al repositorio
+pero sin ningún archivo que hemos agregado al stage.
+
+para añadir el archivo .gitkeep debemos aplicar el siguiente comando.
+
+**git add uploads/.gitkeep**
+
+**git add css/**
+
+toma todo lo que se encuentra en sus directorios y sub-directorios que se encuentran dentro de la carpeta css
+y lo sube al stage.
