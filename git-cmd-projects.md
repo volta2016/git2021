@@ -126,3 +126,70 @@ para añadir el archivo .gitkeep debemos aplicar el siguiente comando.
 
 toma todo lo que se encuentra en sus directorios y sub-directorios que se encuentran dentro de la carpeta css
 y lo sube al stage.
+
+# Cambios en los archivos
+
+**git diff**
+
+Puedes ver los cambios anteriores y actuales el archivo
+
+Puede ser que al inicio esta sintaxis no es tan sencilla.
+Me muestra el lugar donde cambio.
+
+diff --git a/install/instalaciones.md b/install/instalaciones.md
+index 87c8a79..8d29750 100644
+--- a/install/instalaciones.md
++++ b/install/instalaciones.md
+@@ -3,5 +3,5 @@
+Seguir estos pasos:
+
+```
+-npm install
++yarn install
+```
+
+El problema de git diff: es muy difícil de leer
+
+**git diff --staged**
+
+Para ver lo que esta en el stage
+
+## source control
+
+Si veo el **source control** puedo ver los cambios igual pero de una forma visual mas amigable
+podemos ver como esta quedando el archivo final.
+
+## Actualizar mensaje de commit
+
+Hay veces donde damos enter a nuestro commit por equivocación esto podemos solucionarlo, si aplicamos
+git log podemos ver que esta ese último commit por error.
+
+Como lo arreglo:
+Hay varias formas comencemos con la mas sencilla:
+
+**git commit --amend -m "nuevo mensaje"**
+
+Podemos escribir nuestro nuevo mensaje en las comillas, podemos comprobar esto con git log,
+
+- Recordemos que esto commit se aplica para el ultimo mensaje agregado.
+
+Que pasa si olvidamos de agregar algunos cambios a nuestro ultimo commit que deben de ser parte de
+de ese último commit, simplemente agregamos la data adicional y guardamos los cambios. Pero nos damos
+cuenta que este cambio tiene que ser parte del último pero actualmente esta separado. Hay varias formas
+de resolver este inconveniente
+
+**git reset --soft HEAD^**
+
+Estan estas otras posibilidades
+--soft --hard --mix
+
+Hay que tener cuidado porque el reset hard si elimina los cambios.
+
+Analizando nuestro comando **git reset --soft HEAD^**
+
+- HEAD está apuntando al último commit -> si estoy en la rama main quiere decir que este
+  es el último commit que se encuentra en la rama main
+- En teoría pueden colocar le HASH del commit y para no tener que memorizar el HASH aplicamos el HEAD
+  con este singo ^ me mueve al commit antes de HEAD
+- Aplicamos git status y vemos que tenemos modificaciones en archivo que estaba en el stage
+- Aplicamos git log y vemos que ya no aparece el último commit si no el anterior a ese, estoy en ese punto anterior
