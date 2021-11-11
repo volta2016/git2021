@@ -126,3 +126,35 @@ para añadir el archivo .gitkeep debemos aplicar el siguiente comando.
 
 toma todo lo que se encuentra en sus directorios y sub-directorios que se encuentran dentro de la carpeta css
 y lo sube al stage.
+
+# Cambios en los archivos
+
+**git diff**
+
+Puedes ver los cambios anteriores y actuales el archivo
+
+Puede ser que al inicio esta sintaxis no es tan sencilla.
+Me muestra el lugar donde cambio.
+
+diff --git a/install/instalaciones.md b/install/instalaciones.md
+index 87c8a79..8d29750 100644
+--- a/install/instalaciones.md
++++ b/install/instalaciones.md
+@@ -3,5 +3,5 @@
+Seguir estos pasos:
+
+```
+-npm install
++yarn install
+```
+
+El problema de git diff: es muy difícil de leer
+
+**git diff --staged**
+
+Para ver lo que esta en el stage
+
+## source control
+
+Si veo el **source control** puedo ver los cambios igual pero de una forma visual mas amigable
+podemos ver como esta quedando el archivo final.
