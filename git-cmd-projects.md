@@ -193,3 +193,5 @@ Analizando nuestro comando **git reset --soft HEAD^**
   con este singo ^ me mueve al commit antes de HEAD
 - Aplicamos git status y vemos que tenemos modificaciones en archivo que estaba en el stage
 - Aplicamos git log y vemos que ya no aparece el último commit si no el anterior a ese, estoy en ese punto anterior
+
+## Preparando un repositorio para viajes en el tiempo

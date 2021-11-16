@@ -1,7 +1,8 @@
 # Heroes
 
-* Superman
-* Batman
-* Daredevil
-* Aquaman
-* Mujer Maravilla
+- Superman
+- Batman
+- Daredevil
+- Aquaman
+- Mujer Maravilla
+- Linterna Verde
