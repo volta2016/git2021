@@ -195,3 +195,15 @@ Analizando nuestro comando **git reset --soft HEAD^**
 - Aplicamos git log y vemos que ya no aparece el último commit si no el anterior a ese, estoy en ese punto anterior
 
 ## Preparando un repositorio para viajes en el tiempo
+
+**git commit --amend**
+
+Con este comando podemos entrar en este modo de editor, en cual podemos hacer cambios
+
+- Acá podemos ver lo que incluye la fecha vemos información realmente importante
+- Si quiero cambiar el texto puedo ir cambiar con la tecla "a"
+- Ahora puedo borrar Agregar el nuevo mensaje
+
+Para salir escribe lo siguiente:
+
+:wq!
