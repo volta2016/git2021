@@ -180,6 +180,8 @@ de resolver este inconveniente
 
 **git reset --soft HEAD^**
 
+**Mantendrá sus archivos y revertirá automáticamente cualquier cambio**
+
 Estan estas otras posibilidades
 --soft --hard --mix
 
@@ -194,6 +196,15 @@ Analizando nuestro comando **git reset --soft HEAD^**
 - Aplicamos git status y vemos que tenemos modificaciones en archivo que estaba en el stage
 - Aplicamos git log y vemos que ya no aparece el último commit si no el anterior a ese, estoy en ese punto anterior
 
+Si vemos la consola notaremos esto:
+
+- Hubo modificaciones
+- Esta untracked fuera del stage
+
+- Ahora en teoría podríamos nosotros hacer el nuevo commit y actualizar los cambios del commit
+
+- Si aplicamos un git log nuevamente ya tenemos los cambios
+
 ## Preparando un repositorio para viajes en el tiempo
 
 **git commit --amend**
@@ -207,3 +218,40 @@ Con este comando podemos entrar en este modo de editor, en cual podemos hacer ca
 Para salir escribe lo siguiente:
 
 :wq!
+
+**git reset --mixed 272c082**
+
+Es el comando **git reset --** predeterminado y mantiene todos los archivos iguales pero descarta los cambios. Esta es la opción más flexible, pero a pesar del nombre, no modifica archivos.
+
+En teoría este comando tampoco es destructivo, pero saca todo del stage y los cambios quedan listo para que podamos volver añadir y es muy parecido al soft. Luego del comando git reset --mixed vamos poner el numero del hash respectivo.
+
+Nuestros files o folder podemos notar que están untracked. Git ya no le esta dando seguimiento a esos archivos, pero los directorios y todos los cambios siguen ahí
+
+**git reset --hard 272c082**
+
+Este comando sería entre comillas destructivo va dejar todo el repositorio como estaba en ese punto.
+Va destruir completamente todos los cambios y eliminarlos del directorio local. Solo use esto si sabe lo que está haciendo
+
+También podemos ver que el head se va moviendo para atrás:
+
+commit 08b5720ca3dfd2adf57414fb07d0be8c7f8b5c8e (HEAD -> master)
+
+**git reflog**
+
+Para restablecer, necesitará una referencia a la confirmación a la que desea volver. Puedes conseguirlo corriendo reflog:
+
+- Muestra las referencia de todo lo que ha sucedido en orden cronológico:
+
+ejemplo:
+
+b3f91e5 (HEAD -> master) HEAD@{0}: reset: moving to b3f91e5
+0d80b53 HEAD@{1}: reset: moving to HEAD^
+08b5720 HEAD@{2}: reset: moving to 08b5720
+272c082 HEAD@{3}: reset: moving to 272c082
+272c082 HEAD@{4}: reset: moving to 272c082
+b3f91e5 (HEAD -> master) HEAD@{5}: commit: [git] heroes.md: Robin y Linterna verde
+
+- Aquí vamos observar varios punteros en en el head
+
+- Acá tenemos el hash del commit que nos interesa regresar a ese punto por ejemplo nos regresar a un commit en especial de hace
+  2 semanas.
