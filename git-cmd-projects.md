@@ -84,8 +84,13 @@ git commit -m "commit"
 
 **git log"**
 
-Podemos ver el historial de nuestros gif
+Podemos ver el historial de nuestros commit
 El hash es el identificador único de commit
+
+**git lg"**
+
+Configuramos nuestro alias con el log --all --decorate --oneline --graph
+pero con un resumen mas detallado con fechas
 
 # Diferentes formas de agregar commit al escenario
 
@@ -193,7 +198,7 @@ Analizando nuestro comando **git reset --soft HEAD^**
   es el último commit que se encuentra en la rama main
 - En teoría pueden colocar le HASH del commit y para no tener que memorizar el HASH aplicamos el HEAD
   con este singo ^ me mueve al commit antes de HEAD
-- Aplicamos git status y vemos que tenemos modificaciones en archivo que estaba en el stage
+- Aplicamos git status y vemos que tenemos modificaciones en el archivo que estaba en el stage
 - Aplicamos git log y vemos que ya no aparece el último commit si no el anterior a ese, estoy en ese punto anterior
 
 Si vemos la consola notaremos esto:
@@ -223,13 +228,13 @@ Para salir escribe lo siguiente:
 
 Es el comando **git reset --** predeterminado y mantiene todos los archivos iguales pero descarta los cambios. Esta es la opción más flexible, pero a pesar del nombre, no modifica archivos.
 
-En teoría este comando tampoco es destructivo, pero saca todo del stage y los cambios quedan listo para que podamos volver añadir y es muy parecido al soft. Luego del comando git reset --mixed vamos poner el numero del hash respectivo.
+En teoría este comando tampoco es destructivo, pero saca todo del stage y los cambios quedan listo para que podamos volver añadir y es muy parecido al soft. Luego del comando git reset --mixed luego vamos poner el numero del hash respectivo.
 
 Nuestros files o folder podemos notar que están untracked. Git ya no le esta dando seguimiento a esos archivos, pero los directorios y todos los cambios siguen ahí
 
 **git reset --hard 272c082**
 
-Este comando sería entre comillas destructivo va dejar todo el repositorio como estaba en ese punto.
+Este comando sería entre comillas es destructivo va dejar todo el repositorio como estaba en ese punto.
 Va destruir completamente todos los cambios y eliminarlos del directorio local. Solo use esto si sabe lo que está haciendo
 
 También podemos ver que el head se va moviendo para atrás:
@@ -244,7 +249,7 @@ Para restablecer, necesitará una referencia a la confirmación a la que desea v
 
 ejemplo:
 
-b3f91e5 (HEAD -> master) HEAD@{0}: reset: moving to b3f91e5
+b3f91e5 (HEAD -> master) HEAD@{0}: reset: moving to b3f91e5 //actualmente posicionado útlimo paso
 0d80b53 HEAD@{1}: reset: moving to HEAD^
 08b5720 HEAD@{2}: reset: moving to 08b5720
 272c082 HEAD@{3}: reset: moving to 272c082
@@ -255,3 +260,9 @@ b3f91e5 (HEAD -> master) HEAD@{5}: commit: [git] heroes.md: Robin y Linterna ver
 
 - Acá tenemos el hash del commit que nos interesa regresar a ese punto por ejemplo nos regresar a un commit en especial de hace
   2 semanas.
+
+  **git reset --hard 272c082**
+
+- Aplicamos el comando donde queremos regresar. Ahora se debería reconstruir todo mi proyecto.
+
+## Cambiar el nombre y eliminar archivos mediante git
