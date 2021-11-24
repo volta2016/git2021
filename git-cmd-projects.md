@@ -266,3 +266,68 @@ b3f91e5 (HEAD -> master) HEAD@{5}: commit: [git] heroes.md: Robin y Linterna ver
 - Aplicamos el comando donde queremos regresar. Ahora se debería reconstruir todo mi proyecto.
 
 ## Cambiar el nombre y eliminar archivos mediante git
+
+Tener en cuenta que lo del rename es un movimiento lo que realmente hace
+
+**git mv destruir-machine.md salvar-machine.md**
+
+en teoría estoy moviendo de una posición a otra y le estoy cambiando el nombre de paso
+
+si aplicamos **git status** tenemos la información:
+renamed: desrtuir-machine.md -> salvar-machine.md
+
+de la manera corta con **git s** podemos ver:
+
+R desrtuir-machine.md -> salvar-machine.md
+M ../git-cmd-projects.md
+
+vemos que los cambios estan en el stage con **git status**
+
+(use "git reset HEAD <file>..." to unstage)
+
+    renamed:    desrtuir-machine.md -> salvar-machine.md
+
+agrego el commit y vemos que nuestro cambios apuntan al HEAD main
+
+me voy dando cuenta y mejor digo sabes que este archivo mejor lo voy tener que mejor eliminar
+
+## Para eliminar un archivo de git
+
+**git rm namefile**
+
+aún esta en statge pero si aplicamos el comando:
+
+**git commit -m "commit"**
+
+al hacer esto ya quedo como borrado ese archivo
+
+## Cambiar el nombre y eliminar archivos fuera de git
+
+vamos a cambiar el nombre desde vs code superman.historia.md por superman.md
+
+Podría ser que se pierda toda la historia de contenido de nuestro archivo original.
+
+**git status**
+
+D historia/superman.historia.md
+M ../git-cmd-projects.md
+
+tenemos D delete esto es peligroso, por el contenido de ese archivo y registros de historia, acá en este punto es como
+si eliminamos el archivo y creamos un punto nuevo, git lo interpreta como eso.
+
+Es muy peligroso cambiar el nombre de forma manual.
+aplicamos un **git add .** y **git status**
+
+R historia/superman.historia.md -> historia/superman.md
+acá nos aparece una R acá todo lo del archivo orginal antes de cambiar el nombre va ser conservado.
+La R no es que se elimino simplemente le cambiamos el commit.
+
+vamos aplicar un **git reset --hard hash**
+
+notamos que git recordo el nombre del archivo original y que antes se llamaba superman.historia.md
+
+- La diferencia es que cuando uno elimina manual no esta en el stage, debemos añadirlo al stage
+  **git add .**
+  **git commit -m "commit"**
+
+- Podemos ver que cambia el color de la letra D cuando esta en el stage
