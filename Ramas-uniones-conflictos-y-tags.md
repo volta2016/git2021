@@ -36,3 +36,29 @@ Cuando git quiere aplicar estos cambios nos va a decir que no se puede y va entr
   **merge commit**
 
 luego ya podemos ir trabajando son ningún problema.
+
+## Crear ramas
+
+**git branch nombrerama**
+
+Con ese comando podemos poner el nombre de la rama que nostros queramos.
+
+**git branch**
+
+**git branch** vamos a ver que estamos posicionado en el master:
+
+- master
+  villanos
+
+**git checkout nombrerama**
+
+con este comando me puedo mover a una rama con un nombre específico que yo quiera, en nuestra terminal podemos
+visualizar que nos movemos a esa rama.
+
+**git merge nombrerama**
+
+Con este comando nos posicionamos en la rama en la cual queremos traer los cambios de otra X rama para fusionar.
+
+### Fast foward
+
+Acá git logro identificar cada uno de los cambios y no hay ningún conflicto todo lo logro indentificar y anexar corectamente.
