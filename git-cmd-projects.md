@@ -265,6 +265,14 @@ b3f91e5 (HEAD -> master) HEAD@{5}: commit: [git] heroes.md: Robin y Linterna ver
 
 - Aplicamos el comando donde queremos regresar. Ahora se debería reconstruir todo mi proyecto.
 
+## Resumen:
+
+**git reset —soft** - me muevo a una posición con todos los cambios respectivos (sacamos del stage)
+
+**git reset --mixed** - me muevo a un punto y deja todo untracked, todos los cambios siguen ahí incluso los de mas adelante en el tiempo, no tenemos los commit sub siguientes
+
+**git reset --hard** - Esto restablece todo y no mantienen los cambios, el head se va moviendo hacia atrás y apunta al último commit
+
 ## Cambiar el nombre y eliminar archivos mediante git
 
 Tener en cuenta que lo del rename es un movimiento lo que realmente hace
