@@ -52,7 +52,7 @@ Con ese comando podemos poner el nombre de la rama que nostros queramos.
 
 **git checkout nombrerama**
 
-con este comando me puedo mover a una rama con un nombre específico que yo quiera, en nuestra terminal podemos
+Con este comando me puedo mover a una rama con un nombre específico, en nuestra terminal podemos
 visualizar que nos movemos a esa rama.
 
 **git merge nombrerama**
@@ -62,3 +62,13 @@ Con este comando nos posicionamos en la rama en la cual queremos traer los cambi
 ### Fast foward
 
 Acá git logro identificar cada uno de los cambios y no hay ningún conflicto todo lo logro indentificar y anexar corectamente.
+
+## eliminar ramas
+
+**git branch -d nombrerama**
+
+Con este comando borramos una rama específica
+
+**git branch -d nombrerama -f**
+
+Para forzar eliminar una rama que no esta unida o que no si actualizada mediante un merge
