@@ -79,3 +79,9 @@ Para forzar eliminar una rama que no esta unida o que no si actualizada mediante
 me crea la rama y automaticamente me crea el switch de esa rama, quiere decir que me mueve a esa rama
 
 # Uniones y conflictos
+
+Las resoluciones de los conflicto se pueden splucionar añadiendo al stage nuestros file y creando un nuevo un nuevo commit.
+El mismo editor de vs code no da opciones sobre dejar nuestros actuales cambios actualizar con los cambios entrantes de la rama
+secundaria por ejemplo a la principal(master) por ejemplo o bien podemos aplicar estos cambios de forma manual y ver que dejamos
+para luego ya aplicar el commit. Si ya no vamos ocupar la rama secundaria con los issue, features o X cambios eliminamos esa
+rama.
