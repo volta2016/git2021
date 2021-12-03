@@ -72,6 +72,7 @@ Con este comando borramos una rama específica
 **git branch -d nombrerama -f**
 
 Para forzar eliminar una rama que no esta unida o que no si actualizada mediante un merge
+<<<<<<< HEAD
 
 **git branch -b nombrerama**
 
