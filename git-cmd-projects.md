@@ -279,6 +279,8 @@ Tener en cuenta que lo del rename es un movimiento lo que realmente hace
 
 **git mv destruir-machine.md salvar-machine.md**
 
+ejemeplo: git mv oldFolderName newFilename or oldFileName newFilename
+
 en teoría estoy moviendo de una posición a otra y le estoy cambiando el nombre de paso
 
 si aplicamos **git status** tenemos la información:
