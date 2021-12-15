@@ -39,6 +39,8 @@ Aplicamos el siguiente cmd: esto va tomar el ultimo stash lo va dejar como lo te
 
 **git stash pop**
 
+Trae los cambios y también borra ese stash.
+
 git stash pop
 On branch master
 Changes not staged for commit:
@@ -76,3 +78,17 @@ Apareció que hay un archivo modificado de misiones.md y también dice que hizo 
 - 860c6c2 - (4 years, 6 months ago) Agregamos las historias de los heroes - Strider
 
 # Conflictos con el stash
+
+resumen de lo aprendido:
+
+- qué es el stash ? -> Es un lugar donde puedo almacenar toda información de manera temporal y luego recuperarla
+
+Si te piden cambios pero eso aún no esta listo lo mejor es almacenarlo en el stash, para hacer lo que es urgente.
+
+1- grabas el stash
+2- luego sacas con el pop
+
+es algo que usualmente vamos a tener que hacer.
+
+podemos ver que nos trae los cambios al archivo, luego listamos esos cambios con git commit -am
+si yo doy un git lg, ya no tenemos la referencia aquí, esto fue un auto emerge. Git Resuelve el conflicto por mi
