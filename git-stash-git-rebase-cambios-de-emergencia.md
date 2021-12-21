@@ -41,6 +41,8 @@ Aplicamos el siguiente cmd: esto va tomar el ultimo stash lo va dejar como lo te
 
 Trae los cambios y también borra ese stash.
 
+- tomo el ultimo stash el que esta con el 0 lo vuelve a colocar y lo elimina
+
 git stash pop
 On branch master
 Changes not staged for commit:
@@ -86,9 +88,45 @@ resumen de lo aprendido:
 Si te piden cambios pero eso aún no esta listo lo mejor es almacenarlo en el stash, para hacer lo que es urgente.
 
 1- grabas el stash
-2- luego sacas con el pop
+2- luego lo sacas con el pop
 
 es algo que usualmente vamos a tener que hacer.
 
 podemos ver que nos trae los cambios al archivo, luego listamos esos cambios con git commit -am
 si yo doy un git lg, ya no tenemos la referencia aquí, esto fue un auto emerge. Git Resuelve el conflicto por mi
+
+# Stash avanzado
+
+**git stash clear**
+
+Este comando borra todo los stash
+
+**git stash apply apply stash@{2}**
+
+Puedo viajar a un punto especifico en el stash, el que creo me lo posiciona con el número 0 es algo incomodo
+como ordena pero de igual forma lo puedo eliminar.
+
+**git stash drop**
+
+Podemos borrar el stash en la primera posición
+
+**git stash drop stash@{1}**
+
+Borra un stash con un numero específico
+
+**git stash show stash@{1}**
+
+Con este comando puedo ver información de un stash en particular
+
+**git stash save "Agregamos new file"**
+
+Es te comando es es muy recomendado porque queda guardado con el mensaje que aplique, así es mas fácil de
+reconocer si es que necesitas eliminar o realizar cambios
+
+**git stash list --stat**
+
+Obtnego mas información detalla de cada uno de los stash
+
+**recordar que si ya no necesitamos trabajar con los stash limpiemos con:**
+
+**git stash clear**
