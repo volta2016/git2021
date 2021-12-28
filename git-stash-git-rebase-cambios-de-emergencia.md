@@ -125,8 +125,57 @@ reconocer si es que necesitas eliminar o realizar cambios
 
 **git stash list --stat**
 
-Obtnego mas información detalla de cada uno de los stash
+Obtengo mas información detalla de cada uno de los stash
 
 **recordar que si ya no necesitamos trabajar con los stash limpiemos con:**
 
 **git stash clear**
+
+## git rebase
+
+Lo primero es saber en que rama me encuentro parado
+
+- main
+  rama-dev
+
+si yo quiero hacer un rabese tengo que estar en la rama en cual quiero que se muevan los cambios.
+
+git rebase lo que va hacer es tomar el punto de separación de la rama y tomar los 2 commit **los va a poner en otro lugar aparte**,
+Luego va tomar los últimos 2 commit y los va poner > antes de hacer la separación de la rama quiere decir que bajan de nivel en tiempo
+esos 2 últimos commit
+
+cuando terminde de unir la rama-dev al main vamos a ver que dice Fast-fostward
+estos commit están literalmente paralelos
+
+- 158ba9e - (4 years, 6 months ago) Se agrego a la liga: Volcán Negro - Strider (HEAD -> master)
+- 300c014 - (4 years, 6 months ago) Misiones nuevas agregadas - Strider
+  | _ 8e755a3 - (4 years, 6 months ago) Actualizamos dos misiones completadas al momento - Strider (rama-misiones-completadas)
+  | _ cc55aaf - (4 years, 6 months ago) Agregamos el archivo de las misiones completadas - Strider
+  |/
+- acea380 - (4 years, 6 months ago) Actualización de las misiones - Strider
+- 31efae8 - (4 years, 6 months ago) Retomando el trabajo que guarde en el stash - Strider
+
+los commir de de rama-dev van al final y los del inicio retroceden
+
+**git rebase master**
+
+Nos muestra esto en consola:
+
+First, rewinding head to replay your work on top of it...
+Applying: Agregamos el archivo de las misiones completadas
+Applying: Actualizamos dos misiones completadas al momento
+
+quiere decir que sube al top nuestro commit de la rama secundaria, pero ahora nuestro commit de nuestras ramas misiones
+completadas contiene la información del master, ahora si yo decido unir la rama-dev con la rama master o main, hacer un
+Fast-fostward, porque la rama de misiones completada va tener todos cambios del master
+
+Fast-forward
+misiones-completadas.md | 4 ++++
+1 file changed, 4 insertions(+)
+create mode 100644 misiones-completadas.md
+
+como ya no vamos a ocupar mas la rama vamos a eliminarla
+
+**git branch -d rama-misiones-completadas**
+
+Es este es el **rebase normal** que ayuda actualizar el punto inicial de la mi rama
