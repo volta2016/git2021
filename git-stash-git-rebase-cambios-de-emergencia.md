@@ -281,3 +281,33 @@ pick: quiere decir que simplemente lo selecciono para que sea parte del procedim
 pick en teoria lo va dejar así como esta
 
 presionamos "a" para poder editar dentro de la pantalla de editor pero no es la manera correcta
+
+**OJO👀**
+
+Debes tener cuidado con el Rebase reword ya que el puntero de nuestra terminal cambia de color rojo
+al no tener actualizamdo completamente el puntero del head o simplemente un error de pushear en la rama no
+correspondiente por eso si cambias a la rama principal verifica de que todo este bien y aplican el siguiente
+code después del **merge**, lo mismo aplica si es que estas trabajando con rebase squash y reword
+
+**git rebase --continue**
+
+❯ git rebase --continue
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Last commands done (6 commands done):
+reword 91fd480 [git] squash
+reword 94d332e [git] reword update
+No commands remaining.
+You are currently rebasing branch 'master' on '819871c'.
+
+nothing to commit, working tree clean
+You can amend the commit now, with
+
+git commit --amend
+
+Once you are satisfied with your changes, run
+
+git rebase --continue
+❯ git rebase --continue
+Successfully rebased and updated refs/heads/master.
