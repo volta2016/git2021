@@ -271,3 +271,13 @@ modified: misiones-completadas.md
 modified: misiones.md
 
 Lo mejor es dejar el primer mensaje o también puedes editarlo
+
+# Rebase reword
+
+Digamos que quiero actualizar 2 commit el mensaje aplico esl siguiente comando
+para tomar los últimos 4 commit
+
+pick: quiere decir que simplemente lo selecciono para que sea parte del procedimiento del rebase interactivo pero el
+pick en teoria lo va dejar así como esta
+
+presionamos "a" para poder editar dentro de la pantalla de editor pero no es la manera correcta
