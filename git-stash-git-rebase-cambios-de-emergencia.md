@@ -54,7 +54,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (07dead7a1fe882d9b9db20c9542aafd72fed46c5)
 
-Apareció que hay un archivo modificado de misiones.md y también dice que hizo el Drop boto el ese stash en la posición 0 si tienes 1 2 34 todo se corrieron hacia arriba el nuevo stash 0 va ser el que ante era el 1
+Apareció que hay un archivo modificado de misiones.md y también dice que hizo el Drop boto el ese stash en la posición 0 si tienes 1 2 34 todo se correcciones hacia arriba el nuevo stash 0 va ser el que ante era el 1
 
 - 56c0252 - (18 minutes ago) readme update - volta2016 (HEAD -> master)
 - 5440fe5 - (4 years, 6 months ago) Resolviendo conflictos - Strider (tag: v1.0.0)
@@ -179,3 +179,95 @@ como ya no vamos a ocupar mas la rama vamos a eliminarla
 **git branch -d rama-misiones-completadas**
 
 Es este es el **rebase normal** que ayuda actualizar el punto inicial de la mi rama
+
+## git rebase - squash
+
+si yo necesito unificar estos commit puedo hacerlo de las siguiente manera
+
+- e127324 - (6 minutes ago) Actualizamos misiones completadas - volta2016 (HEAD -> master)
+- fb24aa3 - (4 years, 6 months ago) Actualizamos dos misiones completadas al momento - Strider
+
+- **i**: Le digo que sea interactivo, esto ayuda a que sea así fácil de trabajar cuando hay muchos cambios
+- Luego de esto necesito especificar cuantos comandos quiero > desde que commit quiero empezar hacer rebase
+
+> es importante tener en cuenta que a la hora de usar el rebase interactivo es mejor usarlo si ese cambios están aún en equipo, pero si aplicaste push
+> eso quedo así ya es parte de las historia.
+> Otra persona pudo haberlo descargado y podemos haber generado
+> conflictos de manera innecesaria entonces alguien va tener que resolver
+
+- **el rebase**: la correciones de nombre, de separaciones o de uniones que vamos a ver \*\*hay que aplicarlo solamente si solo si no han salido de nuestra computadora, entonces ahí si funcionan super bien
+
+- **HEAD**: Es la referencia al último commit, podemos igual poner un hash
+- Si nosotros queremos los últimos 4 commit podemos poner este cararter "~"
+  luego pasamos la cantidad 4 commit antes del HEAD
+
+git rebase -i HEAD~4
+
+**squash**
+
+- Es tomar 2 cosas que se funcionen y trabajen en conjunto
+- El squash va ver el commit anterior y los va unir
+
+para salir esc :wq! + enter
+
+luego nos muestra un pantalla con las opciones del nuevo mensaje de commit
+
+- pick be699cf Agregamos el archivo de las misiones completadas
+- pick fb24aa3 Actualizamos dos misiones completadas al momento
+- pick e127324 Actualizamos misiones completadas
+- s a9f5cc3 Actualizamos misiones completadas 2
+
+Rebase 158ba9e..a9f5cc3 onto 158ba9e (4 commands)
+
+**Commands:**
+
+- p, pick <commit> = use commit
+- r, reword <commit> = use commit, but edit the commit message
+- e, edit <commit> = use commit, but stop for amending
+- s, squash <commit> = use commit, but meld into previous commit
+- f, fixup <commit> = like "squash", but discard this commit's log message
+- x, exec <command> = run command (the rest of the line) using shell
+- b, break = stop here (continue rebase later with 'git rebase --continue')
+- d, drop <commit> = remove commit
+- l, label <label> = label current HEAD with a name
+- t, reset <label> = reset HEAD to a label
+- m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+- . create a merge commit using the original merge commit's
+- . message (or the oneline, if no original merge commit was
+- . specified). Use -c <commit> to reword the commit message.
+
+These lines can be re-ordered; they are executed from top to bottom.
+-- INSERT --
+
+1. Podemos escribir squash o poner simplemente el shortcut que es un s
+2. si agregamos una s en pick e127324 fusiona al commit superior
+
+para salir esc :wq! + enter
+
+luego em sale una pantalla similar que sale cuando hacemos un commit sin especificar un mensaje:
+
+This is a combination of 2 commits.
+This is the 1st commit message:
+
+Actualizamos misiones completadas
+
+This is the commit message #2:
+
+Actualizamos misiones completadas 2
+
+Please enter the commit message for your changes. Lines starting
+with '#' will be ignored, and an empty message aborts the commit.
+
+Date: Tue Dec 28 18:20:46 2021 -0300
+
+interactive rebase in progress; onto 158ba9e Last commands done (4 commands done):
+pick e127324 Actualizamos misiones completadas
+squash a9f5cc3 Actualizamos misiones completadas 2
+No commands remaining.
+You are currently rebasing branch 'master' on '158ba9e'.
+
+Changes to be committed:
+modified: misiones-completadas.md
+modified: misiones.md
+
+Lo mejor es dejar el primer mensaje o también puedes editarlo
