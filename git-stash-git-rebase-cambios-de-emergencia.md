@@ -311,3 +311,154 @@ Once you are satisfied with your changes, run
 git rebase --continue
 ❯ git rebase --continue
 Successfully rebased and updated refs/heads/master.
+
+**git rebase --continue**
+
+# Rebase edit
+
+Si edito 3 archivos > puede ser que esto sea parte de un unico commit.
+En este caso me gustaría tener esto de manera separada **commit por separados**
+
+tengo 3 archivos modificados si doy **git s**
+
+aplicamos el siguiente comando:
+
+**git checkout -- README.md**
+
+nuestro archivo regresa a como estaba anteriormente en el último commit
+
+tenemos los archivos misiones.md y villados.md eso los voy juntar en el mismo commit
+
+git add .
+git commit -m "[git] commits"
+
+este es un nombre que no deberiamos utlizar
+
+revisamos el historial:
+
+- e125bba - (3 seconds ago) commits - volta2016 (HEAD -> master)
+
+1- El nombre no me dice nada
+2- Yo hice 2 modificaciones a 2 archivos que pudieron haber sido modificaciones de manera independiente cada uno
+(commit idenpendientes) que puedo hacer aquí.
+
+La alternativa para solucionar es un rebase interactivo, también esta la opción de revertir se puede
+hacer un reset del commit anterior, podemos ir trabajando nuevamente y deshacerlo hay muchas técnicas que se pueden utilizar para
+implementarlo, pero este este caso vamos aplicar rebase iteractivo
+
+**git rebase -i HEAD~3**
+
+Vamos a tomar los ultimos 3 commit
+
+vamos a ver que tenemos el rebase iteractivo
+
+pick fb24aa3 Actualizamos dos misiones completadas al momento
+pick 64fac0f Actualizamos misiones completadas
+pick e125bba commits
+
+Rebase be699cf..e125bba onto be699cf (3 commands)
+
+Commands:
+p, pick <commit> = use commit
+r, reword <commit> = use commit, but edit the commit message
+e, edit <commit> = use commit, but stop for amending
+s, squash <commit> = use commit, but meld into previous commit
+f, fixup <commit> = like "squash", but discard this commit's log message
+x, exec <command> = run command (the rest of the line) using shell
+b, break = stop here (continue rebase later with 'git rebase --continue')
+d, drop <commit> = remove commit
+l, label <label> = label current HEAD with a name
+t, reset <label> = reset HEAD to a label
+m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+. create a merge commit using the original merge commit's
+. message (or the oneline, if no original merge commit was
+. specified). Use -c <commit> to reword the commit message.
+
+These lines can be re-ordered; they are executed from top to bottom.
+
+Acá nos va a dar cada una de las lineas una breve reseña pero podemos investigar mas de ellos
+en la documentación
+
+- para editar aplicamos la letra e
+
+ahora vemos que ya no tenemos otra pantalla
+
+---
+
+Stopped at e125bba... commits
+You can amend the commit now, with
+
+git commit --amend
+
+Once you are satisfied with your changes, run
+
+git rebase --continue
+
+---
+
+Podemos hacer el
+
+**git commit --amend** si queremos cambiar el nombre
+
+pero lo interesante es que ahora nos encontramos en algo que se llama
+un rebase manual, en cual nosotros tenemos que especificarle al rebase
+cuando yo termine las modificaciones, esto es delicado que usualmente cuando aplicamos
+un rebase de esta manera y evitar commit lo mejor es hacerlo todo en uno solo y no hacer un stash
+verifiquemos hacer todo los pasos de una vez.
+
+Una vez tenemos todos los cambios respectivos que tenemos que hacer eso de manera manual, tenemos que mandar a
+llamar el
+
+**git rebase --continue**
+
+si llamo al comando **git status** voy a ver que estoy en proceso de un rebase interactivo
+
+- Este comando lo aplicamos una vez ya estamos satisfecho con los cambios que vamos hacer
+
+git status
+interactive rebase in progress; onto be699cf
+
+no estoy en una rama
+
+**git reset HEAD^**
+
+Unstaged changes after reset:
+M misiones.md
+M villanos.md
+
+esto me baja del stage a Unstaged changes de estos 2 archivos.
+
+Estamos en un punto antes que nosotros decidiéramos subirlo a stage u hacer el commit de ambos
+
+git add villanos.md
+❯ git status
+
+vemos que falta el otro archivo pero primero vamos agregar su commit
+
+❯ git add .
+❯ git commit -m "[git] Misiones actualizadas"
+
+en teoría ya agregamos los nuevos commit y ya estan por separados
+
+pero vamos a ver que el head esta arriba y nuestra rama master esta por abajo:
+
+- 5ce2feb - (4 minutes ago) [git] Misiones actualizadas - volta2016 (HEAD)
+- c9b4da2 - (5 minutes ago) [git] Agregamos a deadshot - volta2016
+  | \* e125bba - (86 minutes ago) commits - volta2016 (master)
+
+  esto se puede ver un poco extraño si damos **git status** vamos a ver que seguimos en el rebase interactivo
+  aún le decimos que lo continuamos
+
+  cuando llame a este comando va terminar al rebase interactivo
+
+  **git rebase --continue**
+
+  Successfully rebased and updated refs/heads/master.
+
+  - 5ce2feb - (10 minutes ago) [git] Misiones actualizadas - volta2016 (HEAD -> master)
+
+* c9b4da2 - (11 minutes ago) [git] Agregamos a deadshot - volta2016
+* 64fac0f - (6 days ago) Actualizamos misiones completadas - volta2016
+* fb24aa3 - (4 years, 6 months ago) Actualizamos dos misiones completadas al momento - Strider
+
+ahora el head apunta al último commit
