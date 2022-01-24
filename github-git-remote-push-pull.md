@@ -63,3 +63,13 @@ el push siempre va ser del mismo lugar -v\*\*
 si nosotros tenemos 2 o mas tenemos diferentes lineas
 
 ![origin](/images/origin-master.png)
+
+## Gitosis
+
+Qué es ?
+
+[gitosis](https://wiki.archlinux.org/title/gitosis#:~:text=Gitosis%20is%20a%20tool%20which,system%20accounts%20on%20the%20server.)
+
+Instalación
+
+[gitosis install](https://github.com/res0nat0r/gitosis)
