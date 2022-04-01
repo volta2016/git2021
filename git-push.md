@@ -24,3 +24,11 @@ si recargamos nuestro repositorio en github deberíamos ver todos
 las carpetas y archivos que añadimos a nuestro repositorio.
 
 En este caso ¿ por qué ? hay 32 commit y está creado hace 4 años, esto es porque estamos tomando la sección de código cuando se creó por primera vez. Podemos ver el autor de cada commit con la fecha
+
+- 👀 al momento de dar el comando **git add** debe tomar en cuenta que tiene otro origen remoto y otra carpeta .git
+
+por eso es recomendable aplicar el comando de
+
+**git rm --cached 09-heroes**
+
+![git-rm](/images/git-rm.png)
