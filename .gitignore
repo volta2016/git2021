@@ -5,3 +5,6 @@ cmd-git.rtf
 Materia-Heroes/dist/
 Materia-Heroes/node_modules/
 Materia-Heroes/*.log
+09-heroes/node_modules/
+
+/node_modules

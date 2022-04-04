@@ -224,6 +224,12 @@ Para salir escribe lo siguiente:
 
 :wq!
 
+lo mejor para aplicar este comando es cambiar el ultimo nombre del commit directamente
+
+**git commit --amend -m "your new message"**
+
+---
+
 **git reset --mixed 272c082**
 
 Es el comando **git reset --** predeterminado y mantiene todos los archivos iguales pero descarta los cambios. Esta es la opción más flexible, pero a pesar del nombre, no modifica archivos.

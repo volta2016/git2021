@@ -32,3 +32,49 @@ por eso es recomendable aplicar el comando de
 **git rm --cached 09-heroes**
 
 ![git-rm](/images/git-rm.png)
+
+# Push de los tag en nuestro repositorio
+
+**git tag**
+
+con este comandopuedo ver los tags las versiones
+
+v0.1.0
+v1.0.0
+v2.0.0
+
+nada esto se ecuentra actualmente en le repositorio de github, yo tengo que manualmente
+subirlos. Lo mejor es subirlos todos al mismo tiempo el comando es el siguiente
+
+**git push --tags**
+
+Esto va revisar nuestros tags y los va comparar con nuetro origen remoto
+
+si damos click en el zip nostros descargamos unicamente el contenido de ese repositorio
+
+![git-rm](/images/tags.png)
+
+acá simplemente descargue como estaba el proyecto en ese punto, no es lo mismo clonar
+que a descargarlo de esta maneracuando clonamos el respositorio también clonamos la
+Historia de git. Esta decarga es, como estaban los archivos en ese preciso momento en el tiempo.
+
+- Podemos ir al Hash de commit no va llevar un punto unificado, podemos ver igual las lineas que se agregaron. En split podemos ver como estaba ante el archivo y como quedo después
+
+- Podemos tocar el signo de mas y añadir ciertos comentarios con : podemos agregar emojis
+  a los comentarios
+
+## Releases
+
+Por defecto en este preciso momento lo releases y los tags en este preciso momento son iguales cual es la diferencia entre un tag y release tag. Es que un tag es un punto donde van poder descargar las personas de github
+
+![git-rm](/images/versiones.png)
+
+vamos hacer click en la versión
+
+![git-rm](/images/edit-releases-tag.png)
+
+luego de agregar el comentario el markdown le damos a publish releases
+
+![git-rm](/images/publish.png)
+
+aparte crea un url especifico
