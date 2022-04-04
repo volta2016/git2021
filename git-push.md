@@ -48,24 +48,24 @@ subirlos. Lo mejor es subirlos todos al mismo tiempo el comando es el siguiente
 
 **git push --tags**
 
-Esto va revisar nuestros tags y los va comparar con nuetro origen remoto
+Esto va revisar nuestros tags y los va comparar con nuestro origen remoto
 
-si damos click en el zip nostros descargamos unicamente el contenido de ese repositorio
+si damos click en el zip nosotros descargamos únicamente el contenido de ese repositorio
 
 ![git-rm](/images/tags.png)
 
 acá simplemente descargue como estaba el proyecto en ese punto, no es lo mismo clonar
-que a descargarlo de esta maneracuando clonamos el respositorio también clonamos la
-Historia de git. Esta decarga es, como estaban los archivos en ese preciso momento en el tiempo.
+que a descargarlo de esta manera cuando clonamos el repositorio también clonamos la
+Historia de git. Esta descarga es, como estaban los archivos en ese preciso momento en el tiempo.
 
-- Podemos ir al Hash de commit no va llevar un punto unificado, podemos ver igual las lineas que se agregaron. En split podemos ver como estaba ante el archivo y como quedo después
+- Podemos ir al Hash de commit no va llevar un punto unificado, podemos ver igual las líneas que se agregaron. En split podemos ver como estaba ante el archivo y como quedó después
 
 - Podemos tocar el signo de mas y añadir ciertos comentarios con : podemos agregar emojis
   a los comentarios
 
 ## Releases
 
-Por defecto en este preciso momento lo releases y los tags en este preciso momento son iguales cual es la diferencia entre un tag y release tag. Es que un tag es un punto donde van poder descargar las personas de github
+Por defecto en este preciso momento lo releases y los tags en este preciso momento son iguales cuál es la diferencia entre un tag y release tag. Es que un tag es un punto donde van poder descargar las personas de github
 
 ![git-rm](/images/versiones.png)
 
@@ -77,4 +77,16 @@ luego de agregar el comentario el markdown le damos a publish releases
 
 ![git-rm](/images/publish.png)
 
-aparte crea un url especifico
+aparte crea un url específico
+
+## Creando Releases tags
+
+![git-rm](/images/creando-realese-tags.png)
+
+esto es markdown y podemos arrastrar una captura de pantalla para luego visualizar o cargar abajo del text edit para que se cargue en attach binaries solo que se publica con otra etiqueta. abajo se puede todo lo que subimos se poder descargar como assets.
+
+Podemos crear multiple releases, donde podemos lanzar beta o pre releases
+
+hacer los releases es un paso importante para cualquier aplicación, podemos tener cambios suficientemente inmaduro para que sea la versión final, esto nos va ayudar tener un respaldo en ese punto en el tiempo.
+
+- Lo mejor es crear el tag local, luego lo subes a github
