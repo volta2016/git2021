@@ -88,3 +88,28 @@ si nosotros tenemos 2 o mas tenemos diferentes lineas
 ### Guardar su contraseña de GitHub en la máquina LINUX
 
 [Guardar usuario y contraseña de GitHub](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#platform-linux)
+
+### Pull de los últimos cambios en el repositorio de Github
+
+Nosotros podemos editar el readme, hacer cambios desde la web. Si yo voy a mi repositorio local yo no tengo esas modificaciones.
+
+¿ Como puedo hacerlo para obtener esos cambios ?
+
+**git pull**
+
+este comando sirve para traer los datos del origen que esta seteado por defecto.
+
+**git pull origin main**
+
+también funciona para traer los datos. Aunque cuando configuramos por primera vez nuestro repo
+el origin lo configuramos por defecto con la rama main
+
+**git remote -v**
+
+podemos ver el pad de donde se encuentra nuestro repositorio
+
+origin https://github.com/volta2016/git2021.git (fetch)
+origin https://github.com/volta2016/git2021.git (push)
+
+luego de aplicar el **git pulll** vemos que se aplica un mensaje y nos muestra el Fast-fordward significa que avanzó al último punto mi repositorio local, los cambios no dan conflicto con mi repo que tengo actualmente, si lo cambios dan conflicto entro al modo de problemas manualmente aceptando cambios o desechando cambio, luego debo hacer un commit
+de esos inconvenientes.
