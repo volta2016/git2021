@@ -163,4 +163,42 @@ Tenemos cambio en nuestros archivos luego de esto con el comando:
 
 luego de esto con **git push** subimos los cambios.
 
-- Los conflictos se generan cuando modificamos la misma linea
+- Los conflictos se generan cuando modificamos la misma linea en 2 lugares diferentes.
+
+## git Pull Rebase
+
+La estrategia que usualmente se recomienda es el fast forward por que evitamos problemas. Cuando tenemos inconvenientes de actualizar cambios que están es la misma línea, nosotros manualmente le vamos a especificar como queremos que trabaje la parte del **pull**
+
+para eso vamos aplicar el siguiente comando:
+
+**git config pull.rebase true**
+
+esto hace una configuración local a este repositorio, ya vamos a ver para que esto sea la configuración por defecto
+
+ahora vamos a intentar hacer un git pull nuevamente
+
+![conflict](/images/conflict.png)
+
+en este punto yo me encuentro en medio de un rebase
+
+(no branch, rebasing main)
+que queremos hacer mantener los cambios que vienen de github o mis cambios. Nosotros
+vemos que queremos aceptar
+
+vamos grabar los cambios, git status vamos a ver que aún estoy en git interactivo, agregamos
+nuestro commit para actualizar, aplicamos un mensaje descriptivo de nuestro commit
+
+- git commit -m "unificamos lógica cart"
+
+por ejemplo, si damos git status no debe decir que estamos trabajando en un árbol limpio
+
+![conflict](/images/conflict.png)
+
+git rebase continue es lo que yo debo aplicar después de mi commit y nos dice que el
+rebase se logró de manera exitosa.
+
+finalmente aplicamos un **git push** y revisamos nuestro repositorio que este nuestro último commit
+
+para configurarlo de manera global por defecto podemos usar
+
+**git config --global pull.rebase true**
