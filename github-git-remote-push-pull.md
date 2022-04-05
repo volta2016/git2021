@@ -113,3 +113,54 @@ origin https://github.com/volta2016/git2021.git (push)
 
 luego de aplicar el **git pulll** vemos que se aplica un mensaje y nos muestra el Fast-fordward significa que avanzó al último punto mi repositorio local, los cambios no dan conflicto con mi repo que tengo actualmente, si lo cambios dan conflicto entro al modo de problemas manualmente aceptando cambios o desechando cambio, luego debo hacer un commit
 de esos inconvenientes.
+
+### Warning - Pulling without reconcile strategy
+
+![wp](/images/warnign-pull.png)
+
+git config pull.rabase - false solo va usar el merge
+git config pull.rebase true - cuando vengan los cambios va aplicar un rabase
+git config pull.ff only - solo va aplicar esto si puede aplicar un Fast forward
+
+vamos a hacer una nueva configuración global.
+
+**git config --global pull.ff only**
+
+para poder ver que esta configurado
+
+**git config --global -e**
+
+vemos que esta en las tecnicas del pull
+
+esc :q! para cerrar
+
+aplicamos **git pull**
+
+![ff](/images/ff.png)
+
+podemos apreciar que mis cambios locales perfectamente pueden ser
+movidos al punto en cual mi repositorio local se encuentra
+
+vamos aprenciar que el head esta apuntando al ultimo commit, tambien aparece el origin main.
+Origin es el repositorio remoto, no necesariamente lo vamos tener como origin, simplemente es un estandar pero podemos tener diferentes origenes. Entonces el orgin hace referencia al repositorio de github que tenemos actualmente
+
+## Clonar un repositorio
+
+Para clonar un repositorio simplemente no posicionamos con cd en la carpeta donde queremos
+descomprimir nuestro archivo y ejecutamos el siguiente comando:
+
+**git clone https://github.com/volta2016/git2021.git**
+
+esto es mediante HTTPS
+
+## Subir cambios locales a remoto
+
+Tenemos cambio en nuestros archivos luego de esto con el comando:
+
+**git commit -am "name commit"**
+
+![ff](/images/lg.png)
+
+luego de esto con **git push** subimos los cambios.
+
+- Los conflictos se generan cuando modificamos la misma linea
