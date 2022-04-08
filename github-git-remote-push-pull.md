@@ -199,6 +199,13 @@ rebase se logró de manera exitosa.
 
 finalmente aplicamos un **git push** y revisamos nuestro repositorio que este nuestro último commit
 
-para configurarlo de manera global por defecto podemos usar
+para configurarlo de manera global en toda la computadora por defecto podemos usar
 
 **git config --global pull.rebase true**
+
+# Errores
+
+siempre que damos un push y si tenemos cambios que se realizaron en gihub desde el
+navegador nos va mostrar este error en consola:
+
+![errores-push](/images/errores-push.png)
