@@ -159,6 +159,8 @@ Tenemos cambio en nuestros archivos luego de esto con el comando:
 
 **git commit -am "name commit"**
 
+este comando va renombrar el útimo commit
+
 ![ff](/images/lg.png)
 
 luego de esto con **git push** subimos los cambios.
