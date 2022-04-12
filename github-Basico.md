@@ -38,3 +38,19 @@ texto de ejemplo
 ![gitgub image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiRsVmcUvgQsxMe0dw4FnpIyl09mgxx68Wxg&usqp=CAU)
 
 ## Para practicar más puedes seguir con el siguiente tutorial
+
+![markdown tutorial](https://www.markdowntutorial.com/)
+
+## Buscando archivo en github
+
+En esta sección de github podemos acceder más rápido y fácil
+a nuestros archivos a la hora de buscar uno específico.
+
+Podemos acceder en botón de go to file
+![search file](/images/search-file.png)
+
+## Buscando por ramas
+
+También podemos acceder a la diferentes carpetas según las ramas que se suban al repositorio remoto
+
+![search branch](/images/search-branch.png)
