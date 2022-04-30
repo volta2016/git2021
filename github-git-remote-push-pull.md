@@ -12,9 +12,9 @@ Para eso nostros ejecutaremos un comando llamado **push** que es tomar nuestro r
 cambios que hemos hecho o los cambios pendientes que no estan en el repositorio y subirlos a ese
 servidor
 
-## Push
+## Pull
 
-puede ser que vengan al equipo otras 2 personas nuevas. Esas 2 nuevas personas tiene
+Puede ser que vengan al equipo otras 2 personas nuevas. Esas 2 nuevas personas tiene
 que hacer un **pull** para obtener los cambios desde el servidor, es decir yo subo los cambios y otras
 2 personas pueden hacer el **pull** para descargarlo. Ahora si una de esa personas hace modificaciones
 también va poder realizar un push y yo darme cuenta de los cambios que realizo. Asi podemos trabajar
