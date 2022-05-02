@@ -30,6 +30,6 @@ pero vemos que estamos posicionado en nuestro ultimo commit pero de nuestros úl
 
 ![git pull](/images/gitpull.png)
 
-![git lg git pull ](/images/gitpull2.png)
+![git lg  git pull ](/images/gitpull2.png)
 
 para que el head se encuentre posicionado y actualizado, hay personas que prefieren hacer un **git fetch ante a un git pull** pero eso depende de cada uno.
