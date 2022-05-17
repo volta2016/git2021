@@ -38,7 +38,7 @@ usualmente cuando resolvemos algo lo marcamos como cerrado
 
 no es necesario darle lock, pero sí sabemos que nadie tiene que seguir escribiendo podemos darle lock a la conversación
 
-## Hay que tomar en cuenta esto a la hora de borrar un issue
+Hay que tomar en cuenta esto a la hora de borrar un issue
 
 ![closeissue2](/images/deleteissue.png)
 
