@@ -16,4 +16,5 @@ nuestro navegador web vamos a ver que aquí ya sale automáticamente como cerrad
 
 ![closed](/images/closed.png)
 
-si nos vamos en la pestaña del issue puedo ir a closed y verlos todos
+si nos vamos en la pestaña del issue puedo ir a closed y verlos todos, los
+**protips** dan información bastante útil

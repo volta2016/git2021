@@ -42,4 +42,4 @@ Hay que tomar en cuenta esto a la hora de borrar un issue
 
 ![closeissue2](/images/deleteissue.png)
 
-posiblemente no podamos recuperar ese numeral por haber asignados otros números arriba de ese
+     
